@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import style from './Footer.module.css';
 import logo from '../../assets/images/mainLogo.svg';
 import instagram from '../../assets/images/instagramIcon.png';
@@ -23,18 +24,26 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={style.navigation}>
-                    <div className={style.item}>Главная</div>
+                    <div className={style.item}>
+                        <NavLink to='/'className={(linkClass) => linkClass.isActive ? style.active : style.item}>Главная</NavLink>
+                    </div>
                     <div className={style.item}>
                         <div className={style.shop}>
-                            <p>Магазин</p>
+                            <p>
+                                <NavLink to='/shop'className={(linkClass) => linkClass.isActive ? style.active : style.item}>Магазин</NavLink>
+                            </p>
                             <span>Пальто</span>
                             <span>Свитшоты</span>
                             <span>Кардиганы</span>
                             <span>Толстовки</span>
                         </div>
                     </div>
-                    <div className={style.item}>О бренде</div>
-                    <div className={style.item}>Контакты</div>
+                    <div className={style.item}>
+                        <NavLink to='/about'className={(linkClass) => linkClass.isActive ? style.active : style.item}>О бренде</NavLink>
+                    </div>
+                    <div className={style.item}>
+                        <NavLink to='/contacts'className={(linkClass) => linkClass.isActive ? style.active : style.item}>Контакты</NavLink>
+                    </div>
                 </div>
             </section>
             <section>

@@ -15,11 +15,17 @@
 }
 .navigation {
     display: flex;
+    justify-content: space-between;
+    width: 436px;
 }
-.item {
-    margin-right: 45px;
+.item a{
     line-height: 200%;
 }
+.item a.active {
+    font-weight: 700;
+    color: #6E9C9F;
+}
+
 .rightSide {
     display: flex;
 }

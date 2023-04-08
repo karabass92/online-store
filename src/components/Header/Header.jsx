@@ -6,6 +6,7 @@ import basketDot from '../../assets/images/basket/basketDot.svg';
 import telephone from '../../assets/images/telephone/telephone.svg';
 import telephoneSmallWave from '../../assets/images/telephone/telephoneWaveSmallr.svg';
 import telephoneBigWave from '../../assets/images/telephone/telephoneWaveBig.svg';
+import { NavLink } from "react-router-dom";
 
 
 const Header = () => {
@@ -15,20 +16,20 @@ const Header = () => {
                 <img src={logo} alt="logo" />
                 <span>Womazing</span>
             </section>
-            <section className={style.navigation}>
+            <nav className={style.navigation}>
                 <div className={style.item}>
-                    Главная
+                    <NavLink to='/'className={(linkClass) => linkClass.isActive ? style.active : style.item}>Главная</NavLink>
                 </div>
                 <div className={style.item}>
-                    Магазин
+                    <NavLink to='/shop'className={(linkClass) => linkClass.isActive ? style.active : style.item}>Магазин</NavLink>
                 </div>
                 <div className={style.item}>
-                    О бренде
+                    <NavLink to='/about'className={(linkClass) => linkClass.isActive ? style.active : style.item}>О бренде</NavLink>
                 </div>
                 <div className={style.item}>
-                    Контакты
+                    <NavLink to='/contacts'className={(linkClass) => linkClass.isActive ? style.active : style.item}>Контакты</NavLink>
                 </div>
-            </section>
+            </nav>
             <section className={style.rightSide}>
                 <div className={style.callMakeBlock}>
                     <div className={style.telephoneContainer}>

@@ -32,12 +32,14 @@
 }
 
 .navigation {
-    margin-left: 80px;
     display: flex;
+    justify-content: space-between;
+    width: 436px;
+    margin-left: 80px;
 }
-
-.item {
-    margin-right: 45px;
+.item a.active {
+    font-weight: 700;
+    color: #6E9C9F;
 }
 
 .shop {
