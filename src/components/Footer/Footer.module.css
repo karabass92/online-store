@@ -1,0 +1,84 @@
+.main {
+    width: 1600px;
+    height: 363px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 245px;
+    background: #F1EADC;
+}
+
+.leftSide {
+    display: flex;
+}
+
+.brandName {
+    margin-bottom: 73px;
+}
+
+.brandName span {
+    margin-left: 14px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.generalInfo p {
+    font-size: 13px;
+    line-height: 200%;
+    letter-spacing: 0.02em;
+}
+
+.navigation {
+    margin-left: 80px;
+    display: flex;
+}
+
+.item {
+    margin-right: 45px;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+}
+
+.shop p {
+    margin-bottom: 39px;
+}
+
+.shop span {
+    font-size: 13px;
+    line-height: 200%;
+    letter-spacing: 0.02em;
+}
+
+.telephone {
+    text-align: right;
+    margin-bottom: 9px;
+}
+
+.email {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.socials {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.socials img {
+    margin-left: 12px;
+}
+
+.instagram {
+    width: 22px;
+    height: 22px;
+}
+
+.visa {
+    text-align: right;
+}
