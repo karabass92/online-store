@@ -1,10 +1,10 @@
 import React from "react";
 import style from './Footer.module.css';
-import logo from '../../assets/images/footerLogo.svg';
+import logo from '../../assets/images/mainLogo.svg';
 import instagram from '../../assets/images/instagramIcon.png';
-import facebook from '../../assets/images/facebookIcon.png';
-import twiter from '../../assets/images/twiterIcon.png';
-import visa from '../../assets/images/visaIcon.png';
+import facebook from '../../assets/images/facebookIcon.svg';
+import twiter from '../../assets/images/twiterIcon.svg';
+import visa from '../../assets/images/visaIcon.svg';
 
 
 const Footer = () => {

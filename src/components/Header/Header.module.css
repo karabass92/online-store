@@ -1,0 +1,72 @@
+.main {
+    width: 1110px;    
+    padding-top: 54px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.brandName span {
+    margin-left: 14px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.navigation {
+    display: flex;
+}
+.item {
+    margin-right: 45px;
+    line-height: 200%;
+}
+.rightSide {
+    display: flex;
+}
+
+.callMakeBlock {
+    display: flex;
+}
+.callMakeBlock span{
+    margin-right: 10px;
+    line-height: 170%;
+}
+.telephoneContainer {
+    width: 27px;
+    height: 27px;
+    position: relative;
+}
+.telephone{
+    position: absolute;
+    left: 6px;
+    top: 5.5px;
+}
+.telephoneSmallWave{
+    position: absolute;
+    left: 9px;
+    top: 9px;
+}
+.telephoneBigWave{
+    position: absolute;
+    left: 7px;
+    top: 7px;
+}
+.basketContainer {
+    position: relative;
+    margin-left: 67px;
+}
+.basket {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.basketLeftDot{
+    position: absolute;
+    left: -18px;
+    top: 12px;
+}
+.basketrightDot{
+    position: absolute;
+    right: 6px;
+    top: 12px;
+}
