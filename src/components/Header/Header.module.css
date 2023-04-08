@@ -1,10 +1,14 @@
 .main {
-    width: 1110px;    
-    padding-top: 54px;
-    margin-inline: auto;
+    width: 1110px;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 54px;
+    resize: both;
 }
+
 .brandName span {
     margin-left: 14px;
     font-weight: 500;
@@ -13,17 +17,26 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
+
 .navigation {
     display: flex;
     justify-content: space-between;
     width: 436px;
 }
-.item a{
-    line-height: 200%;
+
+.item {
+    width: 75px;
 }
+
+.item a {
+    line-height: 200%;
+    transition: all 0.5s ease;
+}
+
 .item a.active {
     font-weight: 700;
     color: #6E9C9F;
+    transition: all 0.5s ease;
 }
 
 .rightSide {
@@ -33,46 +46,154 @@
 .callMakeBlock {
     display: flex;
 }
-.callMakeBlock span{
-    margin-right: 10px;
+
+.callMakeBlock span {
+    margin-left: 10px;
     line-height: 170%;
 }
+
 .telephoneContainer {
     width: 27px;
     height: 27px;
     position: relative;
+    background: #E5E5E5;
+    transition: all 0.5s ease;
 }
-.telephone{
+
+.telephone {
     position: absolute;
     left: 6px;
     top: 5.5px;
+    transition: all 0.5s ease;
 }
-.telephoneSmallWave{
+
+.telephoneContainer:hover {
+    background: #6E9C9F;
+    transition: all 0.5s ease;
+}
+
+.telephoneContainer:hover img {
+    filter: brightness(0.1) invert(1);
+    transition: all 0.5s ease;
+}
+
+.telephoneSmallWave {
     position: absolute;
     left: 9px;
     top: 9px;
+    transition: all 0.5s ease;
 }
-.telephoneBigWave{
+
+.telephoneBigWave {
     position: absolute;
     left: 7px;
     top: 7px;
+    transition: all 0.5s ease;
 }
+
 .basketContainer {
     position: relative;
     margin-left: 67px;
 }
+
 .basket {
     position: absolute;
     top: 0px;
     right: 0px;
 }
-.basketLeftDot{
+
+.basketLeftDot {
     position: absolute;
     left: -18px;
     top: 12px;
 }
-.basketrightDot{
+
+.basketrightDot {
     position: absolute;
     right: 6px;
     top: 12px;
+}
+
+.modal {
+    width: 491px;
+    height: 503px;
+    padding: 70px;
+    background-color: #fff;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 1500%;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.modal h2 {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.modal input {
+    width: 350px;
+    height: 24px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #868686;
+}
+
+.modal img {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    cursor: pointer;
+}
+
+.modal input {
+    border-bottom: 1px solid #000000;
+    margin-bottom: 35px;
+    height: 40px;
+}
+
+.modal button {
+    width: 351px;
+    height: 68px;
+    background: #6E9C9F;
+    font-size: 17px;
+    line-height: 138.9%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.overlay {
+    position: absolute;
+    left: -2000px;
+    top: -100px;
+    width: 1000%;
+    height: 100000%;
+    background: rgba(110, 156, 159, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+
+.modal.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
 }

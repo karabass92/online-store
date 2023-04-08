@@ -9,12 +9,14 @@ const App = () => {
         <BrowserRouter>
             <div className="App">
                 <Header />
-                <Routes>
-                    <Route path='/' element={<div className='content'>main</div>} />
-                    <Route path='/shop' element={<div className='content'>shop</div>} />
-                    <Route path='/about' element={<div className='content'>about</div>} />
-                    <Route path='/contacts' element={<div className='content'>contacts</div>} />
-                </Routes>
+                <div className='contentWrapper'>
+                    <Routes>
+                        <Route path='/' element={<div>main</div>} />
+                        <Route path='/shop' element={<div>shop</div>} />
+                        <Route path='/about' element={<div>about</div>} />
+                        <Route path='/contacts'element={<div>contacts</div>} />
+                    </Routes>
+                </div>
                 <Footer />
             </div>
         </BrowserRouter>
