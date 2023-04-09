@@ -3,8 +3,8 @@
 }
 
 .contentWrapper {
-  height: 1000px;
+  min-height: 1000px;
   width: 1110px;
   margin-inline: auto;
-  margin-top: 200px;
+  margin-top: 269px;
 }

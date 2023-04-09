@@ -57,7 +57,7 @@ const Header = () => {
                     <img src={basketDot} alt="basket" className={style.basketrightDot} />
                 </div>
             </section>
-            <div className={`${style.overlay} ${open && style.visible}`}></div>
+            <div className={`${style.overlay} ${open && style.visible}`} onClick={() => setOpen(false)}></div>
             <div className={`${style.modal} ${open && style.visible}`}>
                 <img src={close} alt="close" onClick={() => setOpen(false)} />
                 <h2>Заказать обратный звонок</h2>
