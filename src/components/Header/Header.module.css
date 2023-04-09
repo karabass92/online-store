@@ -7,6 +7,7 @@
     left: 50%;
     top: 54px;
     resize: both;
+    background: #E5E5E5;
 }
 
 .brandName span {
@@ -141,13 +142,10 @@
 .modal input {
     width: 350px;
     height: 24px;
-    font-family: 'Raleway';
-    font-style: normal;
     font-weight: 500;
     font-size: 17px;
     line-height: 140%;
     letter-spacing: 0.02em;
-    color: #868686;
 }
 
 .modal img {
