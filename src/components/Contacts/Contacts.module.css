@@ -1,3 +1,7 @@
+.main {
+    width: 1110px;
+    margin-inline: auto;
+}
 .header {
     margin-left: 3px;
     font-weight: 500;
@@ -61,6 +65,7 @@
 .formInput {
     width: 350px;
     height: 40px;
+    padding-bottom: 16px;
     font-weight: 500;
     font-size: 17px;
     line-height: 140%;
@@ -71,7 +76,7 @@
 }
 
 .messageTextInput {
-    width: 350px;
+    width: 443px;
     height: 134px;
     font-weight: 500;
     font-size: 17px;
@@ -92,4 +97,10 @@
     text-align: center;
     letter-spacing: 0.02em;
     color: #FFFFFF;
+    transition: all 0.5s ease;
+}
+
+.formButton:hover {
+    background: #509498;
+    transition: all 0.5s ease;
 }

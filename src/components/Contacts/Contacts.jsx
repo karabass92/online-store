@@ -4,7 +4,7 @@ import style from './Contacts.module.css';
 
 const Contacts = () => {
     return (
-        <main>
+        <main className={style.main}>
             <h1 className={style.header}>Контакты</h1>
             <div className={style.path}>Главная — Контакты</div>
             <div className={style.map}>
@@ -29,7 +29,7 @@ const Contacts = () => {
                 <input type="text" placeholder="Имя" className={style.formInput}/>
                 <input type="email" placeholder="E-mail" className={style.formInput}/>
                 <input type="text" placeholder="Телефон" className={style.formInput}/>
-                <input type="text" placeholder="Сообщение" className={style.messageTextInput}/>
+                <textarea placeholder="Сообщение" className={style.messageTextInput}/>
                 <button className={style.formButton}>Отправить</button>
             </form>
         </main>

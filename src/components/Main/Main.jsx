@@ -1,0 +1,85 @@
+import React from "react";
+import style from './Main.module.css';
+import img1 from '../../assets/images/main_page/importantForUsBlock/img1.jpg';
+import img2 from '../../assets/images/main_page/importantForUsBlock/img2.svg';
+import img3 from '../../assets/images/main_page/importantForUsBlock/img3.jpg';
+import adam_winger from '../../assets/images/main_page/adam_winger.jpg';
+import { NavLink } from "react-router-dom";
+import About from "../About/About";
+import backgroundImg from '../../assets/images/main_page/background.jpg';
+
+
+const Main = () => {
+    return (
+        <main className={style.main}>
+            <section className={style.carouselContainer}>
+                <div>
+                    carousel
+                </div>
+                <div className={style.imgContainer}>
+                    <img src={backgroundImg} alt="" />
+                </div>
+            </section>
+            <section className={style.newCollectionBlock}>
+                <h2>Новая коллекция</h2>
+                <div>три товара</div>
+                <div>Открыть магазин</div>
+            </section>
+            <h2>Что для нас важно</h2>
+            <section className={style.importantForUsInfo}>
+                <article className={style.importantForUsInfoItem}>
+                    <div>
+                        <img src={img1} alt="img" />
+                    </div>
+                    <h3>Качество</h3>
+                    <p>
+                        Наши профессионалы работают на лучшем оборудовании для пошива одежды
+                        беспрецедентного качества
+                    </p>
+                </article>
+                <article className={style.importantForUsInfoItem}>
+                    <div>
+                        <img src={img2} alt='img' />
+                    </div>
+                    <h3>Скорость</h3>
+                    <p>
+                        Благодаря отлаженной системе в Womazing мы можем отшивать до 20-ти единиц
+                        продукции в наших собственных цехах
+                    </p>
+                </article>
+                <article className={style.importantForUsInfoItem}>
+                    <div>
+                        <img src={img3} alt="img" />
+                    </div>
+                    <h3>Ответственность</h3>
+                    <p>
+                        Мы заботимся о людях и планете. Безотходное производство и комфортные
+                        условия труда - все это Womazing
+                    </p>
+                </article>
+            </section>
+            <h2>Команда мечты Womazing</h2>
+            <section className={style.dreamTeamBlock}>
+                <div className={style.carouselContainer}>
+                    <img src={adam_winger} alt="adam_winger" />
+                </div>
+                <article className={style.dreamTeamArticle}>
+                    <h3>Для каждой</h3>
+                    <p>
+                        Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.
+                    </p>
+                    <p>
+                        Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно
+                        подчеркивают достоинства каждой девушки.
+                    </p>
+                    <div className={style.dreamTeamBlockLink}>
+                        <NavLink to='/about' element={<About/>}>Подробнее о бренде</NavLink>
+                    </div>
+                </article>
+            </section>
+        </main>
+    );
+};
+
+
+export default Main;

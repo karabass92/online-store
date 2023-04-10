@@ -1,11 +1,16 @@
+.wrapper {
+    height: 363px;
+    background: #F1EADC;
+}
+
 .main {
-    width: 1600px;
+    width: 1110px;
     height: 363px;
     margin-inline: auto;
     margin-top: 130px;
     display: flex;
     justify-content: space-between;
-    padding: 100px 245px;
+    padding: 100px 0px;
     background: #F1EADC;
 }
 
@@ -38,48 +43,60 @@
     width: 436px;
     margin-left: 80px;
 }
+
 .item {
     width: 75px;
 }
+
 .item a{
     transition: all 0.5s ease;
 }
+
 .item a.active {
     font-weight: 700;
     color: #6E9C9F;
     transition: all 0.5s ease;
 }
+
 .shop {
     display: flex;
     flex-direction: column;
 }
+
 .shop p {
     margin-bottom: 39px;
 }
+
 .shop span {
     font-size: 13px;
     line-height: 200%;
     letter-spacing: 0.02em;
 }
+
 .telephone {
     text-align: right;
     margin-bottom: 9px;
 }
+
 .email {
     text-align: right;
     margin-bottom: 30px;
 }
+
 .socials {
     text-align: right;
     margin-bottom: 30px;
 }
+
 .socials img {
     margin-left: 12px;
 }
+
 .instagram {
     width: 22px;
     height: 22px;
 }
+
 .visa {
     text-align: right;
 }

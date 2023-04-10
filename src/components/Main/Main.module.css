@@ -1,0 +1,93 @@
+h2 {
+    margin-bottom: 92px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+}
+.main {
+    width: 1110px;
+    margin-inline: auto;
+}
+.carouselContainer {
+    display: flex;
+}
+
+
+.imgContainer {
+    position: relative;
+    z-index: 0;
+}
+
+.newCollectionBlock{}
+
+
+.importantForUsInfo {
+    display: flex;
+    margin-bottom: 130px;
+}
+
+.importantForUsInfoItem {
+    width: 305px;
+    margin-right: 75px;
+}
+
+.importantForUsInfoItem h3 {
+    margin: 37px 0 24px 0;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.importantForUsInfoItem p {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.dreamTeamBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carouselContainer{
+   width: 729px;
+   height: 487px; 
+}
+
+.dreamTeamArticle {
+    width: 255px;
+    margin: auto 0;
+}
+
+.dreamTeamArticle h3 {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+}
+
+.dreamTeamArticle p {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+}
+
+.dreamTeamBlockLink a {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #6E9C9F;
+    transition: all 0.5s ease;
+}
+.dreamTeamBlockLink a:hover {
+    width: 180px; 
+    border-bottom: 1px solid #CEDEDF;
+    transition: all 0.5s ease;
+}

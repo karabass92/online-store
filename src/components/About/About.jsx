@@ -7,7 +7,7 @@ import secondPhoto from '../../assets/images/about_page/barkz.jpg';
 
 const About = () => {
     return (
-        <main>
+        <main className={style.main}>
             <h1 className={style.header}>О бренде</h1>
             <div className={style.path}>Главная — О бренде</div>
             <section className={style.section}>
