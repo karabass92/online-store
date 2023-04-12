@@ -18,13 +18,16 @@
     letter-spacing: 0.02em;
 }
 
-.map {
+.mapContainer {
     width: 1109px;
     height: 476px;
     margin-bottom: 130px;
-    background: #DDDDDD;
-    text-align: center;
-    line-height: 30;
+    border: 1px solid #6E9C9F;
+}
+
+.map {
+    width: 1107px;
+    height: 474px;
 }
 
 .contactInfo {
