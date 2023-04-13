@@ -1,0 +1,94 @@
+.carouselWindow {
+    height: 500px;
+    width: 580px;
+    position: relative;
+}
+
+.item {
+    user-select: none;
+    width: 580px;
+    height: 250px;
+    position: absolute;
+}
+
+.item h1 {
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    margin-bottom: 45px;
+}
+
+.item p {
+    width: 385px;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: right;
+    letter-spacing: 0.02em;
+}
+
+.itemShow {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+    transition: all 0.5s ease;
+}
+
+.itemHidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.shopLinkButton {
+    width: 243px;
+    position: relative;
+    top: 303px;
+    left: 142px;
+    height: 68px;
+    display: block;
+    background: #6E9C9F;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+.shopLink {
+    width: 243px;
+    height: 68px;
+    display: block;
+}
+
+.shopLinkButton a {
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    font-size: 17px;
+    line-height: 400%;
+}
+
+.shopLinkButton:hover {
+    background: #509498;
+    transition: all 0.5s ease;
+}
+.sliderButtonContainer {
+    width: 104px;
+    position: relative;
+    top: 400px;
+    left: 271px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.sliderButton {
+    width: 30px;
+    height: 4px;
+    background: #D1D1D1;
+    transition: all 0.5s ease;
+}
+
+.sliderButtonActive {
+    background: #000000;
+    transition: all 0.5s ease;
+}
+.sliderButton:hover {
+    background: #646262;
+    transition: all 0.5s ease;
+}

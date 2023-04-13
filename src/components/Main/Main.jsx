@@ -13,6 +13,7 @@ import brooke_cagle from '../../assets/images/main_page/brooke-cagle.jpg';
 import christopher_campbell from '../../assets/images/main_page/christopher-campbell.jpg';
 import ben_eaton from '../../assets/images/main_page/ben-eaton.jpg';
 import ProductCard from "../../utils/ProductCard/ProductCard";
+import Slider from "./Slider/Slider";
 
 
 const newCollection = [
@@ -48,7 +49,7 @@ const Main = () => {
         <main className={style.main}>
             <section className={style.carouselContainer}>
                 <div className={style.carousel}>
-                    carousel
+                    <Slider />
                 </div>
                 <div className={style.imgContainer}>
                     <img src={dmitriy} alt="dmitriy" className={style.dmitriy} />
