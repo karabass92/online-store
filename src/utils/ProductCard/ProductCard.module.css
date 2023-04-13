@@ -1,0 +1,40 @@
+.productCardImgContainer {
+    margin-bottom: 24px;
+    position: relative;
+}
+.productCardImgContainer img:hover {
+    position: relative;
+    z-index: 0;
+}
+.productCardImgContainerHover {
+    position: absolute;
+    padding: 228px 160px;
+    top: 0px;
+    width: 350px;
+    height: 478px;
+    background: rgba(110, 156, 159, 0.64);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+.show {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+.productName {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 7px;
+    text-align: center;
+}
+.productPrice {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #998E78;
+    text-align: center;
+}

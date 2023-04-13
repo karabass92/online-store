@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import style from './Main.module.css';
 import img1 from '../../assets/images/main_page/importantForUsBlock/img1.jpg';
 import img2 from '../../assets/images/main_page/importantForUsBlock/img2.svg';
@@ -12,12 +12,37 @@ import ionut_comanici from '../../assets/images/main_page/ionut_comanici.jpg';
 import brooke_cagle from '../../assets/images/main_page/brooke-cagle.jpg';
 import christopher_campbell from '../../assets/images/main_page/christopher-campbell.jpg';
 import ben_eaton from '../../assets/images/main_page/ben-eaton.jpg';
-import arrow from '../../assets/images/main_page/arrow.svg';
+import ProductCard from "../../utils/ProductCard/ProductCard";
+
+
+const newCollection = [
+    {
+        id: 1,
+        name: 'Футболка USA',
+        price: 129,
+        img: brooke_cagle
+    },
+    {
+        id: 2,
+        name: 'Купальник Glow',
+        price: 129,
+        img: christopher_campbell
+    },
+    {
+        id: 3,
+        name: 'Свитшот Sweet Shot',
+        price: 129,
+        img: ben_eaton
+    },
+];
 
 
 const Main = () => {
 
-    const [show, setShow] = useState(false);
+    const products = newCollection.map(product => <ProductCard 
+        productImg={product.img} 
+        productName={product.name} 
+        productPrice={product.price} />);
 
     return (
         <main className={style.main}>
@@ -33,30 +58,7 @@ const Main = () => {
             </section>
             <h2>Новая коллекция</h2>
             <section className={style.newCollectionBlock}>
-                <div className={style.productCard} onMouseOver={()=>setShow(true)}>
-                    <div className={style.productCardImgContainer}>
-                        <img src={brooke_cagle} alt="brooke_cagle" />
-                        <div className={`${style.productCardImgContainerHover} ${show && style.show}`} onMouseOut={()=>setShow(false)}>
-                            <img src={arrow} alt="arrow" />
-                        </div>
-                    </div>
-                    <p className={style.productName}>Футболка USA</p>
-                    <p className={style.productPrice}>$129</p>
-                </div>
-                <div className={style.productCard}>
-                    <div className={style.productCardImgContainer}>
-                        <img src={christopher_campbell} alt="christopher_campbell" />
-                    </div>
-                    <p className={style.productName}>Купальник Glow</p>
-                    <p className={style.productPrice}>$129</p>
-                </div>
-                <div className={style.productCard}>
-                    <div className={style.productCardImgContainer}>
-                        <img src={ben_eaton} alt="ben_eaton" />
-                    </div>
-                    <p className={style.productName}>Свитшот Sweet Shot</p>
-                    <p className={style.productPrice}>$129</p>
-                </div>
+                {products}
             </section>
             <NavLink to='/shop' className={style.newCollectionBlockButton}>
                 <div>

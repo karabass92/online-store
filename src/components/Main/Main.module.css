@@ -17,6 +17,7 @@
 .carouselContainer {
     position: relative;
 }
+
 .carousel {
     height: 50px;
 }
@@ -30,20 +31,20 @@
     background: #F1EADC;
 }
 
-.allef_vinicius{
+.allef_vinicius {
     position: absolute;
     bottom: 0;
     left: -85px;
 
 }
 
-.dmitriy{
+.dmitriy {
     position: absolute;
     top: 120px;
     left: 50px;
 }
 
-.ionut_comanici{
+.ionut_comanici {
     position: absolute;
     top: 230px;
     right: 140px;
@@ -55,63 +56,16 @@
     margin-bottom: 60px;
 }
 
-
-
-
-.productCardImgContainer {
-    margin-bottom: 24px;
-    position: relative;
-}
-.productCardImgContainer img:hover {
-    position: relative;
-    z-index: 0;
-}
-.productCardImgContainerHover {
-    position: absolute;
-    padding: 228px 160px;
-    top: 0px;
-    width: 350px;
-    height: 478px;
-    background: rgba(110, 156, 159, 0.64);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease;
-}
-.show {
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.5s ease;
-}
-
-
-
-.productName {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 140%;
-    letter-spacing: 0.02em;
-    margin-bottom: 7px;
-    text-align: center;
-}
-
-.productPrice {
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 140%;
-    letter-spacing: 0.02em;
-    color: #998E78;
-    text-align: center;
-}
-
 .newCollectionBlockButton {
     width: 243px;
     height: 68px;
     display: block;
     margin-inline: auto;
     text-align: center;
-    border: 1px solid #6E9C9F;  
+    border: 1px solid #6E9C9F;
     transition: all 0.5s ease;
 }
+
 .newCollectionBlockButton div {
     color: #6E9C9F;
     font-weight: 400;
@@ -122,7 +76,7 @@
 }
 
 .newCollectionBlockButton:hover {
-    background-color:#6E9C9F;  
+    background-color: #6E9C9F;
     transition: all 0.5s ease;
 }
 
@@ -161,9 +115,9 @@
     justify-content: space-between;
 }
 
-.carouselContainer{
-   width: 729px;
-   height: 487px; 
+.carouselContainer {
+    width: 729px;
+    height: 487px;
 }
 
 .dreamTeamArticle {
@@ -195,8 +149,9 @@
     color: #6E9C9F;
     transition: all 0.5s ease;
 }
+
 .dreamTeamBlockLink a:hover {
-    width: 180px; 
+    width: 180px;
     border-bottom: 1px solid #CEDEDF;
     transition: all 0.5s ease;
 }
