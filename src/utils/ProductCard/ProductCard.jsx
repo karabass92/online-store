@@ -9,10 +9,11 @@ const ProductCard = (props) => {
     const [show, setShow] = useState(false);
 
     return (
-        <div className={style.productCard} onMouseOver={() => setShow(true)}>
-            <div className={style.productCardImgContainer}>
+        <div className={style.productCard} >
+            <div className={style.productCardImgContainer} onMouseOver={() => setShow(true)}>
                 <img src={props.productImg} alt={`${props.productImg}`} />
-                <div className={`${style.productCardImgContainerHover} ${show && style.show}`} onMouseOut={() => setShow(false)}>
+                <div className={`${style.productCardImgContainerHover} ${show && style.show}`} 
+                    onMouseOut={() => setShow(false)}>
                     <img src={arrow} alt="arrow" />
                 </div>
             </div>

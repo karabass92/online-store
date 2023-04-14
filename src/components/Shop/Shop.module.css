@@ -4,3 +4,74 @@
     margin-top: 269px;
     z-index: 1;
 }
+
+.header {
+    margin-left: 3px;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+}
+
+.path {
+    margin: 26px 0 214px 3px;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.sortButtonContainer {
+    display: flex;
+    margin-bottom: 92px;
+}
+
+.sortButtonItem {
+    padding: 19px 65px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    border: 1px solid black;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sortButtonItemActive {
+    border: 1px solid black;
+    background: #000000;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.productsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 65px 30px;
+    margin-bottom: 65px;
+}
+
+.countOfShownProducts {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #808080;
+    margin-bottom: 65px;
+}
+.paginationBlock {
+    display: flex;
+    justify-content: center;
+}
+.paginationButton {
+    width: 41px;
+    height: 41px;
+    border: 1px solid #000000;
+    background: #E5E5E5;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-right: 15px;
+}

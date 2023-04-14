@@ -41,6 +41,7 @@ const newCollection = [
 const Main = () => {
 
     const products = newCollection.map(product => <ProductCard 
+        key={product.id}
         productImg={product.img} 
         productName={product.name} 
         productPrice={product.price} />);
