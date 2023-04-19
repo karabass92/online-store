@@ -5,6 +5,7 @@ import brooke_cagle from '../../assets/images/main_page/brooke-cagle.jpg';
 import christopher_campbell from '../../assets/images/main_page/christopher-campbell.jpg';
 import ben_eaton from '../../assets/images/main_page/ben-eaton.jpg';
 
+
 const Shop = () => {
 
     const products = [

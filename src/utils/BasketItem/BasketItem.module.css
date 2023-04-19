@@ -1,0 +1,32 @@
+.main {
+    display: grid;
+    grid-template-columns: 475px 190px 285px 1fr;
+    margin-bottom: 50px;
+}
+
+.productImg {
+    height: 180px;
+    width: 125px;
+}
+
+.firstCol {
+    display: flex;
+    align-items: center;
+}
+
+.firstCol img {
+    margin-right: 40px;
+}
+
+.secondtCol {
+    display: flex;
+    align-items: center;
+}
+.thirdCol {
+    display: flex;
+    align-items: center;
+}
+.fourthCol {
+    display: flex;
+    align-items: center;
+}

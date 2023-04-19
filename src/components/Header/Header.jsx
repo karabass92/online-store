@@ -52,9 +52,11 @@ const Header = () => {
                     <span>+7 (495) 823-54-12</span>
                 </div>
                 <div className={style.basketContainer}>
-                    <img src={basket} alt="basket" className={style.basket} />
-                    <img src={basketDot} alt="basket" className={style.basketLeftDot} />
-                    <img src={basketDot} alt="basket" className={style.basketrightDot} />
+                    <NavLink to='/basket'>
+                        <img src={basket} alt="basket" className={style.basket} />
+                        <img src={basketDot} alt="basket" className={style.basketLeftDot} />
+                        <img src={basketDot} alt="basket" className={style.basketrightDot} />
+                    </NavLink>
                 </div>
             </section>
             <div className={`${style.overlay} ${open && style.visible}`} onClick={() => setOpen(false)}></div>
