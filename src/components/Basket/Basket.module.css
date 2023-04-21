@@ -40,12 +40,9 @@
     margin-bottom: 90px;
 }
 
-
-
-
 .totalBlock {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .totalPrice {
@@ -66,13 +63,20 @@
 .checkoutButton {
     width: 236px;
     height: 68px;
-    left: 302px;
-    top: 52px;
+    display: block;
     background: #6E9C9F;
+    text-align: center;
     font-size: 17px;
     letter-spacing: 0.02em;
     color: #FFFFFF;
     transition: all 0.5s ease;
+}
+
+.checkoutButton a {
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    font-size: 17px;
+    line-height: 400%;
 }
 
 .checkoutButton:hover {

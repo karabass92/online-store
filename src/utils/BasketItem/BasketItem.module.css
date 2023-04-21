@@ -12,6 +12,10 @@
 .firstCol {
     display: flex;
     align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
 }
 
 .firstCol img {
@@ -21,12 +25,26 @@
 .secondtCol {
     display: flex;
     align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
 }
+
 .thirdCol {
     display: flex;
     align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
 }
+
 .fourthCol {
     display: flex;
     align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
 }

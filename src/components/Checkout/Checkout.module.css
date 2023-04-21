@@ -1,0 +1,161 @@
+.main {
+    width: 1110px;
+    margin-inline: auto;
+    margin-top: 269px;
+}
+
+.header {
+    margin-left: 3px;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+}
+
+.path {
+    margin: 26px 0 135px 3px;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.checkoutForm {
+    display: grid;
+    grid-template-columns: 645px 465px;
+}
+
+.sectionHeader {
+    font-weight: 500;
+    font-size: 25px;
+    margin: 80px 0 45px 0;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.checkoutHeader {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    width: 300px;
+    height: 55px;
+    padding: 14px 0 14px 18px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.checkoutItem {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    width: 300px;
+    height: 55px;
+    padding: 14px 0 14px 18px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.checkoutFooter {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    width: 300px;
+    height: 55px;
+    padding: 14px 0 14px 18px;
+    background: #F1EADC;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.formInput {
+    width: 350px;
+    height: 40px;
+    display: block;
+    padding-bottom: 16px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #000000;
+    background: #E5E5E5;
+}
+
+.messageTextInput {
+    width: 443px;
+    height: 134px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #000000;
+    background: #E5E5E5;
+}
+
+.paymentCheckBox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.paymentCheckBox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+.paymentCheckBox+label::before {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #000;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    transition: all 0.5s ease;
+}
+
+.paymentCheckBox:checked+label::before {
+    background-image: url(./../../assets/images/checkout_page/rectangle.svg);
+}
+
+.paymentCheckBox:focus+label::before {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.paymentCheckBox:disabled+label::before {
+    background-color: #e9ecef;
+}
+
+.byCash {
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em; 
+}
+
+.formButton {
+    padding: 22px 0;
+    margin-top: 47px;
+    width: 246px;
+    height: 68px;
+    display: block;
+    background: #6E9C9F;
+    font-size: 17px;
+    line-height: 138.9%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    transition: all 0.5s ease;
+}
+
+.formButton:hover {
+    background: #509498;
+    transition: all 0.5s ease;
+}
