@@ -1,0 +1,93 @@
+.main {
+    width: 1110px;
+    margin-inline: auto;
+    margin-top: 269px;
+}
+
+.header {
+    margin-left: 3px;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+}
+
+.path {
+    margin: 26px 0 220px 3px;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+}
+
+.imageContainer {
+    position: relative;
+    margin-right: 44px;
+    height: 84px;
+    width: 72px;
+}
+
+.borderImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.innerImg {
+    position: absolute;
+    left: 20px;
+    top: 29px;
+}
+
+.succesMessageContainer p {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 17px;
+}
+
+.succesMessageContainer span {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.toMainPageLink {
+    width: 243px;
+    height: 68px;
+    display: block;
+    text-align: center;
+    border: 1px solid #6E9C9F;
+    transition: all 0.5s ease;
+}
+
+.toMainPageLink div {
+    color: #6E9C9F;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 390%;
+    letter-spacing: 0.02em;
+    transition: all 0.5s ease;
+}
+
+.toMainPageLink:hover {
+    background-color: #6E9C9F;
+    transition: all 0.5s ease;
+}
+
+.toMainPageLink div:hover {
+    color: #fff;
+    transition: all 0.5s ease;
+}

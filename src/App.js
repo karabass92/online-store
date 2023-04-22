@@ -8,6 +8,7 @@ import Main from './components/Main/Main';
 import Shop from './components/Shop/Shop';
 import Basket from './components/Basket/Basket';
 import Checkout from './components/Checkout/Checkout';
+import SuccesCheckout from './components/SuccesCheckout/SuccesCheckout';
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
                     <Route path='/contacts'element={<Contacts />} />
                     <Route path='/basket' element={<Basket />} />
                     <Route path='/checkout' element={<Checkout />} />
+                    <Route path='/succescheckout' element={<SuccesCheckout />} />
                 </Routes>
                 <Footer />
             </div>
