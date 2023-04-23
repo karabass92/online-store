@@ -1,0 +1,156 @@
+.main {
+    width: 1110px;
+    margin-inline: auto;
+    margin-top: 269px;
+}
+
+.header {
+    margin-left: 3px;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+}
+
+.path {
+    margin: 26px 0 220px 3px;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.productInfoContainer {
+    display: flex;
+}
+
+.productImg {
+    height: 729px;
+    width: 536px;
+    display: block;
+    margin-right: 74px;
+}
+
+.productPrice {
+    margin-bottom: 59px;
+    display: block;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    color: #998E78;
+}
+
+.chooseSize {
+    margin-bottom: 34px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.sizeRadioButton {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.sizeRadioButton+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.sizeRadioButton+label::before {
+    content: '';
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 41px;
+    height: 41px;
+    margin-right: 14px;
+    border: 1px solid #000;
+    transition: all 0.5s ease;
+}
+
+.sizeRadioButton:checked+label::before {
+    background-color: #000;
+}
+
+.sSize+label::before {
+    content: 'S';
+    transition: all 0.5s ease;
+}
+
+.sSize:checked+label::before {
+    color: #FFFFFF;
+}
+
+.mSize+label::before {
+    content: 'M';
+    transition: all 0.5s ease;
+}
+
+.mSize:checked+label::before {
+    color: #FFFFFF;
+}
+
+.lSize+label::before {
+    content: 'L';
+    transition: all 0.5s ease;
+}
+
+.lSize:checked+label::before {
+    color: #FFFFFF;
+}
+
+.xlSize+label::before {
+    content: 'XL';
+    transition: all 0.5s ease;
+}
+
+.xlSize:checked+label::before {
+    color: #FFFFFF;
+}
+
+.productCount {
+    width: 68px;
+    height: 68px;
+    margin-right: 11px;
+    display: block;
+    border: 1px solid #AFAFAF;
+    background: none;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.formButton {
+    padding: 22px 50px;
+    width: 268px;
+    height: 68px;
+    background: #6E9C9F;
+    font-size: 17px;
+    line-height: 138.9%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    transition: all 0.5s ease;
+}
+
+.formButton:hover {
+    background: #509498;
+    transition: all 0.5s ease;
+}
+
+.addProductToBasketButtonContainer {
+    margin-top: 59px;
+    display: flex;
+}
+
+.addProductToBasketButtonContainer input::-webkit-outer-spin-button,
+.addProductToBasketButtonContainer input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

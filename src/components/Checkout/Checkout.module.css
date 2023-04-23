@@ -105,7 +105,8 @@
     display: inline-flex;
     align-items: center;
     user-select: none;
-  }
+}
+
 .paymentCheckBox+label::before {
     content: '';
     display: inline-block;

@@ -9,6 +9,7 @@ import Shop from './components/Shop/Shop';
 import Basket from './components/Basket/Basket';
 import Checkout from './components/Checkout/Checkout';
 import SuccesCheckout from './components/SuccesCheckout/SuccesCheckout';
+import Product from './components/Product/Product';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                     <Route path='/basket' element={<Basket />} />
                     <Route path='/checkout' element={<Checkout />} />
                     <Route path='/succescheckout' element={<SuccesCheckout />} />
+                    <Route path='/product' element={<Product />} />
                 </Routes>
                 <Footer />
             </div>
