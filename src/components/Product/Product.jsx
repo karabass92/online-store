@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from './Product.module.css';
-import brooke_cagle from '../../assets/images/main_page/brooke-cagle.jpg';
-
-
-const product = {
-    id: 1,
-    name: 'Футболка USA',
-    price: 129,
-    img: brooke_cagle,
-    type: 'Футболки'
-};
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 
 const Product = () => {
+
+    let {productId} = useParams();
+
+    const [product, setProducts] = useState([])
+
+    useEffect( () => {
+        const promise = axios.get(`http://localhost:5000/api/product/`+ productId)
+        promise.then((res) => {
+            setProducts(res.data)
+    })}, [])
+
     return (
         <main className={style.main}>
             <h1 className={style.header}>{product.name}</h1>
-            <div className={style.path}>Главная — {product.type} — {product.name}</div>
+            <div className={style.path}>Главная — {product.name}</div>
             <section className={style.productInfoContainer}>
-                <img src={product.img} alt={product.img} className={style.productImg} />
+                <img src={'../static/' + product.img} alt={product.img} className={style.productImg} />
                 <div>
                     <span className={style.productPrice}>
                         ${product.price}

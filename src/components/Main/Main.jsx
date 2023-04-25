@@ -1,47 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from './Main.module.css';
 import img1 from '../../assets/images/main_page/importantForUsBlock/img1.jpg';
 import img2 from '../../assets/images/main_page/importantForUsBlock/img2.svg';
 import img3 from '../../assets/images/main_page/importantForUsBlock/img3.jpg';
 import adam_winger from '../../assets/images/main_page/adam_winger.jpg';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import About from "../About/About";
 import allef_vinicius from '../../assets/images/main_page/allef_vinicius.jpg';
 import dmitriy from '../../assets/images/main_page/dmitriy.jpg';
 import ionut_comanici from '../../assets/images/main_page/ionut_comanici.jpg';
-import brooke_cagle from '../../assets/images/main_page/brooke-cagle.jpg';
-import christopher_campbell from '../../assets/images/main_page/christopher-campbell.jpg';
-import ben_eaton from '../../assets/images/main_page/ben-eaton.jpg';
 import ProductCard from "../../utils/ProductCard/ProductCard";
 import Slider from "./Slider/Slider";
-
-
-const newCollection = [
-    {
-        id: 1,
-        name: 'Футболка USA',
-        price: 129,
-        img: brooke_cagle
-    },
-    {
-        id: 2,
-        name: 'Купальник Glow',
-        price: 129,
-        img: christopher_campbell
-    },
-    {
-        id: 3,
-        name: 'Свитшот Sweet Shot',
-        price: 129,
-        img: ben_eaton
-    },
-];
+import axios from "axios";
 
 
 const Main = () => {
 
-    const products = newCollection.map(product => <ProductCard 
+    const [newCollection, setNewCollection] = useState([]);
+
+    useEffect( () => {
+        const promise = axios.get(`http://localhost:5000/api/product`)
+        promise.then((res) => {
+            setNewCollection(res.data.rows)
+    })}, []);
+
+    const products = newCollection.slice(0, 3).map(product => <ProductCard 
         key={product.id}
+        id={product.id}
         productImg={product.img} 
         productName={product.name} 
         productPrice={product.price} />);

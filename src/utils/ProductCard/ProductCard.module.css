@@ -1,7 +1,15 @@
 .productCardImgContainer {
     margin-bottom: 24px;
     position: relative;
+    width: 350px;
+    height: 478px;
 }
+
+.productImg {
+    width: 350px;
+    height: 478px;
+}
+
 .productCardImgContainer img:hover {
     position: relative;
     z-index: 0;
