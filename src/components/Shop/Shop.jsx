@@ -6,33 +6,42 @@ import axios from "axios";
 
 const Shop = () => {
 
-    const [products, setProducts] = useState([])
-
-    useEffect( () => {
-        const promise = axios.get(`http://localhost:5000/api/product`)
-        promise.then((res) => {
-            setProducts(res.data.rows)
-    })}, [])
-
+    const [products, setProducts] = useState([]);
     const [type, setType] = useState(null);
-    
-    const showProducts = products
-    .filter(product => product.type === (type ?? product.type))
-    .map(product => <ProductCard 
-        key={product.id}
-        id={product.id}
-        productImg={product.img} 
-        productName={product.name} 
-        productPrice={product.price} />);
+    const [page, setPage] = useState(1);
 
-    let pagesCount = Math.ceil(showProducts.length / 9);
+    const productsPerPage = 6;
+    const lastIndex = page * productsPerPage;
+    const startIndex = lastIndex - productsPerPage;
+
+    useEffect(() => {
+        const promise = axios.get(`http://localhost:5000/api/product`);
+        promise.then((res) => {
+            setProducts(res.data.rows);
+        })
+    }, []);
+
+    const filteredProducts = products
+        .filter(product => 
+            product.type === (type ?? product.type));
     
+    const productsOnPage = filteredProducts.slice(startIndex, lastIndex);
+
+    const showProducts = productsOnPage
+        .map(product => <ProductCard
+            key={product.id}
+            id={product.id}
+            productImg={product.img}
+            productName={product.name}
+            productPrice={product.price} />);
+    
+    let pagesCount = Math.ceil(filteredProducts.length / productsPerPage);
     let pages = [];
 
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     };
-
+    
     return (
         <main className={style.main}>
 
@@ -45,30 +54,45 @@ const Shop = () => {
             </div>
 
             <div className={style.sortButtonContainer}>
-                <div className={`${style.sortButtonItem} ${type === null && style.sortButtonItemActive}`} 
-                    onClick={()=>setType(null)}>
+                <div className={`${style.sortButtonItem} ${type === null && style.sortButtonItemActive}`}
+                    onClick={() => {
+                        setType(null)
+                        setPage(1)
+                        }}>
                     Все
                 </div>
-                <div className={`${style.sortButtonItem} ${type === 'tshirt' && style.sortButtonItemActive}`} 
-                    onClick={()=>setType('tshirt')}>
+                <div className={`${style.sortButtonItem} ${type === 'tshirt' && style.sortButtonItemActive}`}
+                    onClick={() => {
+                        setType('tshirt')
+                        setPage(1)
+                        }}>
                     Футболки
                 </div>
-                <div className={`${style.sortButtonItem} ${type === 'sweetShot' && style.sortButtonItemActive}`} 
-                    onClick={()=>setType('sweetShot')}>
+                <div className={`${style.sortButtonItem} ${type === 'sweetShot' && style.sortButtonItemActive}`}
+                    onClick={() => {
+                        setType('sweetShot')
+                        setPage(1)
+                        }}>
                     Свитшоты
                 </div>
-                <div className={`${style.sortButtonItem} ${type === 'cardigan' && style.sortButtonItemActive}`} 
-                    onClick={()=>setType('cardigan')}>
+                <div className={`${style.sortButtonItem} ${type === 'cardigan' && style.sortButtonItemActive}`}
+                    onClick={() => {
+                        setType('cardigan')
+                        setPage(1)
+                        }}>
                     Кардиганы
                 </div>
-                <div className={`${style.sortButtonItem} ${type === 'smock' && style.sortButtonItemActive}`} 
-                    onClick={()=>setType('smock')}>
+                <div className={`${style.sortButtonItem} ${type === 'smock' && style.sortButtonItemActive}`}
+                    onClick={() => {
+                        setType('smock')
+                        setPage(1)
+                        }}>
                     Толстовки
                 </div>
             </div>
 
             <div className={style.countOfShownProducts}>
-                Показано: {showProducts.length} из {showProducts.length} товаров
+                Показано: {showProducts.length} из {filteredProducts.length} товаров
             </div>
 
             <div className={style.productsContainer}>
@@ -76,13 +100,18 @@ const Shop = () => {
             </div>
 
             <div className={style.countOfShownProducts}>
-                Показано: {showProducts.length} из {showProducts.length} товаров
+                Показано: {showProducts.length} из {filteredProducts.length} товаров
             </div>
-
+            
             <div className={style.paginationBlock}>
                 {pages.map((p) => {
                     return (
-                        <button className={style.paginationButton}>{p}</button>
+                        <button 
+                            className={`${style.paginationButton} ${p === page && style.activePaginationButton}` } 
+                            onClick={ () => setPage(p)}
+                            key={p}>
+                                {p}
+                        </button>
                     )
                 })}
             </div>

@@ -14,7 +14,7 @@ const Product = () => {
         const promise = axios.get(`http://localhost:5000/api/product/`+ productId)
         promise.then((res) => {
             setProducts(res.data)
-    })}, [])
+    })}, [productId])
 
     return (
         <main className={style.main}>
