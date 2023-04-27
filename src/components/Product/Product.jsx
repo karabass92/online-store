@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import style from './Product.module.css';
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { connect } from "react-redux";
+import { addProductToBasket } from "../../store/reducers/basketReducer";
 
 
-const Product = () => {
+const Product = (props) => {
 
     let {productId} = useParams();
 
@@ -26,7 +28,6 @@ const Product = () => {
                     <span className={style.productPrice}>
                         ${product.price}
                     </span>
-                    <form>
                         <h3 className={style.chooseSize}>Выберите размер</h3>
                         <input type="radio" name="size" id="sSize" 
                             className={`${style.sizeRadioButton} ${style.sSize}`} />
@@ -42,9 +43,8 @@ const Product = () => {
                         <label htmlFor="xlSize"></label>
                         <div className={style.addProductToBasketButtonContainer}>
                             <input type="number" className={style.productCount}/>
-                            <button className={style.formButton}>Добавить в корзину</button>
+                            <button className={style.formButton} onClick={ () => props.addProductToBasket(product)}>Добавить в корзину</button>
                         </div>
-                    </form>
                 </div>
             </section>
         </main>
@@ -52,4 +52,9 @@ const Product = () => {
 };
 
 
-export default Product;
+const mapStateToProps = (state) => {
+    return {}
+}
+
+
+export default connect(mapStateToProps, {addProductToBasket})(Product);

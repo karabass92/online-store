@@ -4,7 +4,7 @@ import img1 from '../../assets/images/main_page/importantForUsBlock/img1.jpg';
 import img2 from '../../assets/images/main_page/importantForUsBlock/img2.svg';
 import img3 from '../../assets/images/main_page/importantForUsBlock/img3.jpg';
 import adam_winger from '../../assets/images/main_page/adam_winger.jpg';
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import About from "../About/About";
 import allef_vinicius from '../../assets/images/main_page/allef_vinicius.jpg';
 import dmitriy from '../../assets/images/main_page/dmitriy.jpg';

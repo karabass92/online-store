@@ -18,6 +18,13 @@
     letter-spacing: 0.02em;
 }
 
+.deleteProductButton {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
 .firstCol img {
     margin-right: 40px;
 }

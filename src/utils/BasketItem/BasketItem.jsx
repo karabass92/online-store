@@ -7,8 +7,11 @@ const BasketItem = (props) => {
     return (
         <section className={style.main}>
             <div className={style.firstCol}>
-                <img src={cross} alt="delete" />
-                <img src={props.productImg} alt="" className={style.productImg}/>
+                <div className={style.deleteProductButton}
+                    onClick={ () => props.deleteProductFromBasket(props.productId) }>
+                    <img src={cross} alt="delete" />
+                </div>
+                <img src={'./static/' + props.productImg} alt="" className={style.productImg}/>
                 <span>{props.productName}</span>
             </div>
             <div className={style.secondtCol}>

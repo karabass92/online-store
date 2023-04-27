@@ -1,49 +1,13 @@
 import React from "react";
 import style from './Basket.module.css';
-import brooke_cagle from '../../assets/images/main_page/brooke-cagle.jpg';
-import christopher_campbell from '../../assets/images/main_page/christopher-campbell.jpg';
-import ben_eaton from '../../assets/images/main_page/ben-eaton.jpg';
 import BasketItem from "../../utils/BasketItem/BasketItem";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { deleteProductFromBasket } from "../../store/reducers/basketReducer";
 
 
-const products = [
-    {
-        id: 1,
-        name: 'Футболка USA',
-        price: 129,
-        img: brooke_cagle,
-        type: 1
-    },
-    {
-        id: 2,
-        name: 'Купальник Glow',
-        price: 129,
-        img: christopher_campbell,
-        type: 2
-    },
-    {
-        id: 3,
-        name: 'Свитшот Sweet Shot',
-        price: 129,
-        img: ben_eaton,
-        type: 3
-    },
-];
-
-
-const Basket = () => {
-
-    const productList = products
-        .map(product => <BasketItem
-            key={product.id}
-            productImg={product.img}
-            productName={product.name}
-            productPrice={product.price}
-            productCount={1}
-        />)
-
-    const totalPrice = products.reduce(
+const Basket = (props) => {
+    const totalPrice = props.productsInBasket.reduce(
         (accumulator, product) => accumulator + product.price * 1, 0);
 
     return (
@@ -61,7 +25,19 @@ const Basket = () => {
                 <p>Всего</p>
             </div>
             <section className={style.basketContent}>
-                {productList}
+                {
+                    props.productsInBasket.length >= 1
+                    ? props.productsInBasket
+                    .map(product => <BasketItem
+                        key={product.id}
+                        deleteProductFromBasket={props.deleteProductFromBasket}
+                        productId={product.id}
+                        productImg={product.img}
+                        productName={product.name}
+                        productPrice={product.price}
+                        productCount={1} />)
+                    : 'Basket is empty'
+                }
             </section>
             <div className={style.totalBlock}>
                 <div className={style.totalPrice}>
@@ -79,4 +55,11 @@ const Basket = () => {
 };
 
 
-export default Basket;
+const mapStateToProps = (state) => {
+    return {
+        productsInBasket: state.basket.productsInBasket
+    }
+};
+
+
+export default connect(mapStateToProps, {deleteProductFromBasket})(Basket);
