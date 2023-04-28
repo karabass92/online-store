@@ -8,7 +8,7 @@ import { deleteProductFromBasket } from "../../store/reducers/basketReducer";
 
 const Basket = (props) => {
     const totalPrice = props.productsInBasket.reduce(
-        (accumulator, product) => accumulator + product.price * 1, 0);
+        (accumulator, product) => accumulator + product.price * product.productCount, 0);
 
     return (
         <main className={style.main}>
@@ -35,8 +35,8 @@ const Basket = (props) => {
                         productImg={product.img}
                         productName={product.name}
                         productPrice={product.price}
-                        productCount={1} />)
-                    : 'Basket is empty'
+                        productCount={product.productCount} />)
+                    : 'Корзина пуста'
                 }
             </section>
             <div className={style.totalBlock}>

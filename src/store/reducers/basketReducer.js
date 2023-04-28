@@ -10,12 +10,15 @@ let initialState = {
 const basketReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_PRODUCT:
+            debugger
             let product = {
                 id: action.product.id,
                 name: action.product.name,
                 img: action.product.img,
                 price: action.product.price,
-                type: action.product.type
+                type: action.product.type,
+                productCount: action.productCount,
+                productSize: action.productSize
             }
             return {
                 ...state, 
@@ -32,8 +35,8 @@ const basketReducer = (state = initialState, action) => {
 };
 
 
-export const addProductToBasket = (product) => {
-    return { type: ADD_PRODUCT, product }
+export const addProductToBasket = (product, productCount, productSize) => {
+    return { type: ADD_PRODUCT, product, productCount, productSize}
 };
 
 export const deleteProductFromBasket = (productId) => {

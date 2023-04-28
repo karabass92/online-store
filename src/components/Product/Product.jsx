@@ -10,13 +10,21 @@ const Product = (props) => {
 
     let {productId} = useParams();
 
-    const [product, setProducts] = useState([])
+    const [product, setProducts] = useState([]);
+    const [productCount, setProductCount] = useState(1);
+    const [productSize, setProductSize] = useState('S');
 
     useEffect( () => {
         const promise = axios.get(`http://localhost:5000/api/product/`+ productId)
         promise.then((res) => {
             setProducts(res.data)
-    })}, [productId])
+    })}, [productId]);
+
+    const onAddProductClick = (product, productCount, setProductSize) => {
+        props.addProductToBasket(product, productCount, setProductSize)
+    };
+
+    console.log(productSize)
 
     return (
         <main className={style.main}>
@@ -30,20 +38,31 @@ const Product = (props) => {
                     </span>
                         <h3 className={style.chooseSize}>Выберите размер</h3>
                         <input type="radio" name="size" id="sSize" 
+                            checked={productSize === 'S' && 'checked'}
+                            onClick={() => setProductSize('S')}
                             className={`${style.sizeRadioButton} ${style.sSize}`} />
                         <label htmlFor="sSize"></label>
-                        <input type="radio" name="size" id="mSize" 
+                        <input type="radio" name="size" id="mSize"
+                            checked={productSize === 'M' && 'checked'}
+                            onClick={() => setProductSize('M')} 
                             className={`${style.sizeRadioButton} ${style.mSize}`}/>
                         <label htmlFor="mSize"></label>
-                        <input type="radio" name="size" id="lSize" 
+                        <input type="radio" name="size" id="lSize"
+                            checked={productSize === 'L' && 'checked'}
+                            onClick={() => setProductSize('L')} 
                             className={`${style.sizeRadioButton} ${style.lSize}`}/>
                         <label htmlFor="lSize"></label>
                         <input type="radio" name="size" id="xlSize" 
+                            checked={productSize === 'XL' && 'checked'}
+                            onClick={() => setProductSize('XL')}
                             className={`${style.sizeRadioButton} ${style.xlSize}`}/>
                         <label htmlFor="xlSize"></label>
                         <div className={style.addProductToBasketButtonContainer}>
-                            <input type="number" className={style.productCount}/>
-                            <button className={style.formButton} onClick={ () => props.addProductToBasket(product)}>Добавить в корзину</button>
+                            <input type="number" className={style.productCount} value={productCount} />
+                            <button className={style.formButton} 
+                                onClick={() => onAddProductClick(product, productCount, productSize)}>
+                                Добавить в корзину
+                            </button>
                         </div>
                 </div>
             </section>
@@ -54,7 +73,7 @@ const Product = (props) => {
 
 const mapStateToProps = (state) => {
     return {}
-}
+};
 
 
 export default connect(mapStateToProps, {addProductToBasket})(Product);
