@@ -10,7 +10,6 @@ let initialState = {
 const basketReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_PRODUCT:
-            debugger
             let product = {
                 id: action.product.id,
                 name: action.product.name,
@@ -38,6 +37,7 @@ const basketReducer = (state = initialState, action) => {
 export const addProductToBasket = (product, productCount, productSize) => {
     return { type: ADD_PRODUCT, product, productCount, productSize}
 };
+
 
 export const deleteProductFromBasket = (productId) => {
     return { type: DELETE_PRODUCT, productId}

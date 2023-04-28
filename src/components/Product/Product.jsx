@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from './Product.module.css';
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -13,6 +13,8 @@ const Product = (props) => {
     const [product, setProducts] = useState([]);
     const [productCount, setProductCount] = useState(1);
     const [productSize, setProductSize] = useState('S');
+    
+    const count = useRef(productCount)
 
     useEffect( () => {
         const promise = axios.get(`http://localhost:5000/api/product/`+ productId)
@@ -24,7 +26,9 @@ const Product = (props) => {
         props.addProductToBasket(product, productCount, setProductSize)
     };
 
-    console.log(productSize)
+    const onProductCountChange = () => {
+        setProductCount(count.current.value)
+    };
 
     return (
         <main className={style.main}>
@@ -58,7 +62,7 @@ const Product = (props) => {
                             className={`${style.sizeRadioButton} ${style.xlSize}`}/>
                         <label htmlFor="xlSize"></label>
                         <div className={style.addProductToBasketButtonContainer}>
-                            <input type="number" className={style.productCount} value={productCount} />
+                            <input type="number" className={style.productCount} ref={count} value={productCount} onChange={ () => setProductCount(count.current.value)} />
                             <button className={style.formButton} 
                                 onClick={() => onAddProductClick(product, productCount, productSize)}>
                                 Добавить в корзину
