@@ -18,3 +18,11 @@ export const shopAPI = {
         return instance.get(`product`).then(response => response.data.rows)
     }
 };
+
+
+export const mainPageAPI = {
+    getNewCollection() {
+        return instance.get(`product`)
+            .then(response => response.data.rows)
+    }
+};

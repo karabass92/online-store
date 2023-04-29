@@ -2,7 +2,7 @@ const ADD_PRODUCT = 'ADD_PRODUCT';
 const DELETE_PRODUCT = 'DELETE_PRODUCT';
 
 
-let initialState = {
+const initialState = {
     productsInBasket: [],
 };
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import style from './Shop.module.css';
 import ProductCard from "../../utils/ProductCard/ProductCard";
-import axios from "axios";
+import { connect } from "react-redux";
+import { getAllProducts } from "../../store/reducers/shopReducer";
 
 
-const Shop = () => {
+const Shop = ({products, getAllProducts}) => {
 
-    const [products, setProducts] = useState([]);
     const [type, setType] = useState(null);
     const [page, setPage] = useState(1);
 
@@ -14,12 +14,10 @@ const Shop = () => {
     const lastIndex = page * productsPerPage;
     const startIndex = lastIndex - productsPerPage;
 
-    useEffect(() => {
-        const promise = axios.get(`http://localhost:5000/api/product`);
-        promise.then((res) => {
-            setProducts(res.data.rows);
-        })
-    }, []);
+    useEffect (() => {
+        getAllProducts()
+    }, [getAllProducts]);
+
 
     const filteredProducts = products
         .filter(product => 
@@ -121,4 +119,11 @@ const Shop = () => {
 };
 
 
-export default Shop;
+const mapStateToProps = (state) => {
+    return {
+        products: state.shop.products
+    }
+};
+
+
+export default connect(mapStateToProps, {getAllProducts})(Shop);

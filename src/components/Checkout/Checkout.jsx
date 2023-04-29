@@ -60,7 +60,7 @@ const Checkout = () => {
                         productsInBasket.map( product => 
                         <p className={style.checkoutItem}>
                             <span>{product.name}</span>
-                            <span>{product.price}</span>
+                            <span>${product.price}</span>
                         </p>)  
                     }
                     <p className={style.checkoutFooter}>

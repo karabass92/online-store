@@ -26,10 +26,6 @@ const Product = (props) => {
         props.addProductToBasket(product, productCount, setProductSize)
     };
 
-    const onProductCountChange = () => {
-        setProductCount(count.current.value)
-    };
-
     return (
         <main className={style.main}>
             <h1 className={style.header}>{product.name}</h1>
@@ -75,9 +71,4 @@ const Product = (props) => {
 };
 
 
-const mapStateToProps = (state) => {
-    return {}
-};
-
-
-export default connect(mapStateToProps, {addProductToBasket})(Product);
+export default connect(null, {addProductToBasket})(Product);
