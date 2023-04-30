@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from './Contacts.module.css';
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
@@ -10,6 +10,13 @@ const mapData = {
 
 
 const Contacts = () => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [telephone, setTelephone] = useState('');
+    const [messageText, setMessageText] = useState('');
+
+
     return (
         <main className={style.main}>
             <h1 className={style.header}>Контакты</h1>
