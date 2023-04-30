@@ -148,9 +148,62 @@
 .addProductToBasketButtonContainer {
     margin-top: 59px;
     display: flex;
+    margin-bottom: 60px;
 }
 
 .addProductToBasketButtonContainer input::-webkit-outer-spin-button,
 .addProductToBasketButtonContainer input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+.productAddedMessage {
+    width: 300px;
+    background: #F1EADC;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 400%;
+    margin-bottom: 30px;
+}
+
+.continueShoping {
+    width: 243px;
+    height: 68px;
+    display: block;
+    text-align: center;
+    border: 1px solid #6E9C9F;
+    transition: all 0.5s ease;
+}
+
+.continueShoping div {
+    color: #6E9C9F;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 390%;
+    letter-spacing: 0.02em;
+    transition: all 0.5s ease;
+}
+
+.continueShoping:hover {
+    background-color: #6E9C9F;
+    transition: all 0.5s ease;
+}
+
+.continueShoping div:hover {
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.ifProductIsNotAdded {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.ifProductIsAdded {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
 }
