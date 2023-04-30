@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import style from './Main.module.css';
 import img1 from '../../assets/images/main_page/importantForUsBlock/img1.jpg';
 import img2 from '../../assets/images/main_page/importantForUsBlock/img2.svg';
@@ -11,20 +11,17 @@ import dmitriy from '../../assets/images/main_page/dmitriy.jpg';
 import ionut_comanici from '../../assets/images/main_page/ionut_comanici.jpg';
 import ProductCard from "../../utils/ProductCard/ProductCard";
 import Slider from "./Slider/Slider";
-import axios from "axios";
+import { connect } from "react-redux";
+import { getNewCollection } from "../../store/reducers/mainPageReducer";
 
 
-const Main = () => {
-
-    const [newCollection, setNewCollection] = useState([]);
+const Main = ({newCollection, getNewCollection}) => {
 
     useEffect( () => {
-        const promise = axios.get(`http://localhost:5000/api/product`)
-        promise.then((res) => {
-            setNewCollection(res.data.rows)
-    })}, []);
+        getNewCollection()
+    }, [getNewCollection]);
 
-    const products = newCollection.slice(0, 3).map(product => <ProductCard 
+    const products = newCollection.map(product => <ProductCard 
         key={product.id}
         id={product.id}
         productImg={product.img} 
@@ -109,4 +106,11 @@ const Main = () => {
 };
 
 
-export default Main;
+const mapStateToProps = (state) => {
+    return{
+        newCollection: state.mainPage.newCollection
+    };
+};
+
+
+export default connect(mapStateToProps, {getNewCollection})(Main);

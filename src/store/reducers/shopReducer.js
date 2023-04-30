@@ -1,6 +1,6 @@
 import { shopAPI } from "../../api/api";
 
-const SET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
+const SET_ALL_PRODUCTS = 'SET_ALL_PRODUCTS';
 
 
 const initialState = {

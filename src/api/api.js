@@ -8,14 +8,16 @@ const instance = axios.create (
 
 export const productAPI = {
     getOneProduct(productId) {
-        return instance.get(`product/${productId}`).then(response => response.data)
+        return instance.get(`product/${productId}`)
+            .then(response => response.data)
     }
 };
 
 
 export const shopAPI = {
     getAllProducts() {
-        return instance.get(`product`).then(response => response.data.rows)
+        return instance.get(`product`)
+            .then(response => response.data.rows)
     }
 };
 
@@ -23,6 +25,6 @@ export const shopAPI = {
 export const mainPageAPI = {
     getNewCollection() {
         return instance.get(`product`)
-            .then(response => response.data.rows)
+            .then(response => response.data.rows.slice(-3))
     }
 };
