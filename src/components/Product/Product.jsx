@@ -1,30 +1,33 @@
 import React, { useEffect, useRef, useState } from "react";
 import style from './Product.module.css';
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { addProductToBasket } from "../../store/reducers/basketReducer";
+import { getProduct } from "../../store/reducers/productReducer";
 
 
-const Product = (props) => {
+const Product = ({product, addProductToBasket, getProduct}) => {
 
     let {productId} = useParams();
 
-    const [product, setProducts] = useState([]);
     const [productCount, setProductCount] = useState(1);
     const [productSize, setProductSize] = useState('S');
     
     const count = useRef(productCount)
 
     useEffect( () => {
-        const promise = axios.get(`http://localhost:5000/api/product/`+ productId)
-        promise.then((res) => {
-            setProducts(res.data)
-    })}, [productId]);
+        getProduct(productId)
+    }, [getProduct, productId]);
 
     const onAddProductClick = (product, productCount, setProductSize) => {
-        props.addProductToBasket(product, productCount, setProductSize)
+        addProductToBasket(product, productCount, setProductSize)
     };
+
+    if (!product) {
+        return (
+            <h1>loading</h1>
+        )
+    }
 
     return (
         <main className={style.main}>
@@ -71,4 +74,11 @@ const Product = (props) => {
 };
 
 
-export default connect(null, {addProductToBasket})(Product);
+const mapStateToProps = (state) => {
+    return {
+        product: state.productPage.product
+    };
+};
+
+
+export default connect(mapStateToProps, {addProductToBasket, getProduct})(Product);

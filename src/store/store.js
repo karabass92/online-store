@@ -3,12 +3,14 @@ import basketReducer from "./reducers/basketReducer";
 import shopReducer from "./reducers/shopReducer";
 import thunkMiddleWare from "redux-thunk";
 import mainPageReducer from "./reducers/mainPageReducer";
+import productReducer from "./reducers/productReducer";
 
 
 const reducers = combineReducers ({
     basket: basketReducer,
     shop: shopReducer,
     mainPage: mainPageReducer,
+    productPage: productReducer,
 });
 
 
