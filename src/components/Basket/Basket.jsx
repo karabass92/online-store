@@ -5,8 +5,18 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteProductFromBasket } from "../../store/reducers/basketReducer";
 
-
+/**TODO: деструктуризация, проверка на наличие пропсов при использовании*/
 const Basket = (props) => {
+    /** TODO: вынести в helpers
+        export const getTotalPrice = (collection, price, count) => {
+            if(collection.length > 0 && !Number.isNaN(price) && !Number.isNaN(count)) {
+                return collection.reduce((acc, product) => acc + price + count, 0)
+            }
+            return 0; ну или что-то другое, что нужно
+        }
+        и тут также юзать
+        const totalPrice = getTotalPrice(productsInBasket, price, productCount)
+     */
     const totalPrice = props.productsInBasket.reduce(
         (accumulator, product) => accumulator + product.price * product.productCount, 0);
 

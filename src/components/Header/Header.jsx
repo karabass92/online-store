@@ -12,6 +12,8 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
 
+
+    {/** TODO: Убрать, обьяснил ниже */}
     const [open, setOpen] = useState(false);
 
     return (
@@ -22,26 +24,34 @@ const Header = () => {
             </section>
             <nav className={style.navigation}>
                 <div className={style.item}>
+                    {/** TODO: Вынести в отдельный компонент, а то тут копипаст и пересчет стилей еще в зависимости то переменной */}
                     <NavLink to='/' className={(linkClass) => linkClass.isActive
                         ? style.active
                         : style.item}>Главная</NavLink>
                 </div>
                 <div className={style.item}>
+                    {/** TODO: Вынести в отдельный компонент, а то тут копипаст и пересчет стилей еще в зависимости то переменной */}
                     <NavLink to='/shop' className={(linkClass) => linkClass.isActive
                         ? style.active
                         : style.item}>Магазин</NavLink>
                 </div>
                 <div className={style.item}>
+                    {/** TODO: Вынести в отдельный компонент, а то тут копипаст и пересчет стилей еще в зависимости то переменной */}
                     <NavLink to='/about' className={(linkClass) => linkClass.isActive
                         ? style.active
                         : style.item}>О бренде</NavLink>
                 </div>
                 <div className={style.item}>
+                    {/** TODO: Вынести в отдельный компонент, а то тут копипаст и пересчет стилей еще в зависимости то переменной */}
                     <NavLink to='/contacts' className={(linkClass) => linkClass.isActive
                         ? style.active
                         : style.item}>Контакты</NavLink>
                 </div>
             </nav>
+
+            {/** TODO: Вынести в отдельный компонент, тогда здесь пропадет useState, который перерисовывает весь header,
+                хотя нужен только для модалки "Заказать звонок"
+             */}
             <section className={style.rightSide}>
                 <div className={style.callMakeBlock}>
                     <button className={style.telephoneContainer} onClick={() => setOpen(true)}>

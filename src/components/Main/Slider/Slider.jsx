@@ -7,6 +7,18 @@ import { NavLink } from "react-router-dom";
 const Slider = () => {
 
 
+    /**TODO: Я бы здесь завел 1 стейт, который бы хранил индекс текущего элемента
+     * то есть:
+     * const [currentSlide, setCurrentSlide] = useState(0);
+     * будет тогда и 1 кликер:
+     * const handleSlideClick = (slideIdx: number) => {
+     *     setCurrentSlide(slideIdx)
+     * }
+     * в 3 раза меньше перерисовок, и если будет не 3 слайда, а 100, то будет в 100 раз меньше перерисовок и кода :)
+     * Для этого, соответственно в верстке тоже нужно будет немного обыграть, чтобы ты прокидывал index. Может удобно
+     * будет вынести в отдельный компонент Slide. Я бы, наверное, так сделал.
+     * */
+
     const [showItem1, setShowItem1] = useState(false);
     const [showItem2, setShowItem2] = useState(false);
     const [showItem3, setShowItem3] = useState(true);

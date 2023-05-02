@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from './Contacts.module.css';
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
-
+/* TODO: создать папку const, там хранить вот такие штучки */
 const mapData = {
     center: [55.576569, 37.116807],
     zoom: 16,
@@ -11,6 +11,7 @@ const mapData = {
 
 const Contacts = () => {
 
+    {/* TODO: убрать, если не используется */}
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [telephone, setTelephone] = useState('');

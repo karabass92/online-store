@@ -26,11 +26,13 @@ const Footer = () => {
                     </div>
                     <div className={style.navigation}>
                         <div className={style.item}>
+                            { /**TODO: В отдельный компонент */}
                             <NavLink to='/' className={(linkClass) => linkClass.isActive ? style.active : style.item}>Главная</NavLink>
                         </div>
                         <div className={style.item}>
                             <div className={style.shop}>
                                 <p>
+                                    { /**TODO: В отдельный компонент */}
                                     <NavLink to='/shop' className={(linkClass) => linkClass.isActive ? style.active : style.item}>Магазин</NavLink>
                                 </p>
                                 <span>Пальто</span>
@@ -40,9 +42,11 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className={style.item}>
+                            { /**TODO: В отдельный компонент */}
                             <NavLink to='/about' className={(linkClass) => linkClass.isActive ? style.active : style.item}>О бренде</NavLink>
                         </div>
                         <div className={style.item}>
+                            { /**TODO: В отдельный компонент */}
                             <NavLink to='/contacts' className={(linkClass) => linkClass.isActive ? style.active : style.item}>Контакты</NavLink>
                         </div>
                     </div>
