@@ -8,6 +8,7 @@ import { getProduct } from "../../store/reducers/productReducer";
 
 const Product = ({ product, addProductToBasket, getProduct }) => {
 
+    /**TODO: не let, а const. */
     let { productId } = useParams();
 
     const [productCount, setProductCount] = useState(1);
@@ -18,6 +19,7 @@ const Product = ({ product, addProductToBasket, getProduct }) => {
 
     useEffect(() => {
         getProduct(productId)
+        /**TODO: не уверен, но нужен ли getProduct в deps */
     }, [getProduct, productId]);
 
     const onAddProductClick = (product, productCount, setProductSize) => {
@@ -26,6 +28,8 @@ const Product = ({ product, addProductToBasket, getProduct }) => {
     };
 
     if (!product) {
+
+        /* Вот это уже хорошо */
         return (
             <h1>loading</h1>
         )
@@ -36,12 +40,16 @@ const Product = ({ product, addProductToBasket, getProduct }) => {
             <h1 className={style.header}>{product.name}</h1>
             <div className={style.path}>Главная — {product.name}</div>
             <section className={style.productInfoContainer}>
+                {/**TODO: строку в переменную запихнуть, и избавиться от конкатенации */}
                 <img src={'../static/' + product.img} alt={product.img} className={style.productImg} />
                 <div>
                     <span className={style.productPrice}>
                         ${product.price}
                     </span>
                     <h3 className={style.chooseSize}>Выберите размер</h3>
+                    {
+                        /**TODO: вынести инпут в отдельный компонент */
+                    }
                     <input type="radio" name="size" id="sSize"
                         checked={productSize === 'S' && 'checked'}
                         onClick={() => setProductSize('S')}
@@ -63,6 +71,7 @@ const Product = ({ product, addProductToBasket, getProduct }) => {
                         className={`${style.sizeRadioButton} ${style.xlSize}`} />
                     <label htmlFor="xlSize"></label>
                     <div className={style.addProductToBasketButtonContainer}>
+                        {/**TODO: не понял сакрального смысла ref */}
                         <input type="number" className={style.productCount} ref={count} value={productCount} onChange={() => setProductCount(count.current.value)} />
                         <button className={style.formButton}
                             onClick={() => onAddProductClick(product, productCount, productSize)}>

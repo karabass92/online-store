@@ -15,12 +15,17 @@ import { connect } from "react-redux";
 import { getNewCollection } from "../../store/reducers/mainPageReducer";
 
 
+/**TODO: Не увидел нигде, чтобы ты по проекту где-то прокидывал в <Main ... /> указанные пропсы newCollection и getNewCollection*/
 const Main = ({newCollection, getNewCollection}) => {
 
+    /**TODO: Не совсем понял зависимость в эффекторе здесь. Она нужна для того, чтобы эффект триггерился при изменении
+     * чего-то в deps. Думаю, нужно завязаться на что-то другое
+     * */
     useEffect( () => {
         getNewCollection()
     }, [getNewCollection]);
 
+    /**TODO: useMemo, deps будет newCollection */
     const products = newCollection.map(product => <ProductCard 
         key={product.id}
         id={product.id}
@@ -42,6 +47,11 @@ const Main = ({newCollection, getNewCollection}) => {
             </section>
             <h2>Новая коллекция</h2>
             <section className={style.newCollectionBlock}>
+                {
+                    /**TODO: тут и в подобных местах будет undefined, поскольку блок рисуетсе вне зависимости от наличия
+                     * переменной products, если newCollection будет undefined - во-первых интерпритация вылетит,
+                     * т.к. будет попытка map of undefined, а даже если чудом что-то сработает, то будет нарисована кака
+                     * */}
                 {products}
             </section>
             <NavLink to='/shop' className={style.newCollectionBlockButton}>

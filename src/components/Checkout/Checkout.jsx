@@ -2,6 +2,7 @@ import React from "react";
 import style from './Checkout.module.css';
 
 
+/**TODO: В константы*/
 const productsInBasket = [
     {
         id: 1,
